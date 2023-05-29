@@ -54,9 +54,11 @@
 	<div class="bg-gray-100 px-6 py-8 dark:bg-gray-700">
 		<div class="relative m-auto max-w-7xl px-4 md:px-8 lg:px-16">
 			<h2 class="mb-2 text-xl capitalize">Skills</h2>
-			{#each skills as skill}
-				<Card title={skill.title} level={skill.level} />
-			{/each}
+			<div class=" grid gap-2 md:grid-cols-3">
+				{#each skills as skill}
+					<Card title={skill.title} level={skill.level} />
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
