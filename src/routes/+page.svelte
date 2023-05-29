@@ -1,5 +1,6 @@
-<script lang="ts">
-	import { experiences } from '../lib/experience';
+<script>
+	import Card from '$lib/card.svelte';
+	import { experiences, skills } from '$lib/experience';
 </script>
 
 <!-- template -->
@@ -9,12 +10,16 @@
 
 <section class="m-auto mb-8 max-w-7xl px-4 md:px-8 lg:px-16">
 	<div class="grid gap-8 md:grid-cols-2">
-		<div id="about" class="h-fit rounded bg-slate-100 px-6 py-8 drop-shadow-sm dark:bg-gray-700">
+		<div id="about" class="h-fit rounded bg-gray-100 px-6 py-8 drop-shadow-sm dark:bg-gray-700">
 			<h2 class="mb-2 text-xl capitalize">about</h2>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita similique accusamus eaque
-				deserunt placeat laudantium voluptatem error, molestias nobis, tenetur sapiente eos incidunt
-				tempore vero numquam dolor, suscipit at velit.
+			<p class="text-gray-500 dark:text-gray-400">
+				Passionate about creating captivating and user-friendly web experiences, I am a frontend web
+				developer with expertise in utilizing Adobe Creative Suite. With a strong foundation in web
+				development and design principles, I recently completed a comprehensive bootcamp to further
+				enhance my skills. By combining my technical knowledge and creativity, I strive to deliver
+				visually appealing and engaging websites that exceed client expectations. I am dedicated to
+				continuous learning and staying up-to-date with the latest industry trends to provide
+				innovative solutions in the ever-evolving world of web development.
 			</p>
 		</div>
 
@@ -24,7 +29,7 @@
 				{#each experiences as { date, title, company, body }}
 					<li class="mb-10 ml-4">
 						<div
-							class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"
+							class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded border border-white bg-gray-200 dark:border-gray-800 dark:bg-gray-700"
 						/>
 						<div class="flex items-center justify-between">
 							<p class="text-gray-400 dark:text-gray-500">{company}</p>
@@ -41,6 +46,17 @@
 					</li>
 				{/each}
 			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="m-auto mb-8">
+	<div class="bg-gray-100 px-6 py-8 dark:bg-gray-700">
+		<div class="relative m-auto max-w-7xl px-4 md:px-8 lg:px-16">
+			<h2 class="mb-2 text-xl capitalize">Skills</h2>
+			{#each skills as skill}
+				<Card title={skill.title} level={skill.level} />
+			{/each}
 		</div>
 	</div>
 </section>
