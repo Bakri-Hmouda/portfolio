@@ -10,3 +10,27 @@
 <main>
 	<slot />
 </main>
+
+<footer class=" bg-gray-950">
+	<div class="m-auto max-w-7xl px-4 py-12 md:px-8 lg:px-16">
+		<div class="grid grid-cols-3">
+			<div>
+				<h4 class="text-xl text-gray-400">Contact</h4>
+				<ul>
+					<li>
+						<a class="transition-colors hover:text-emerald-600" href="tel:0096171450221">Phone</a>
+					</li>
+					<li>
+						<a
+							class="transition-colors hover:text-emerald-600"
+							href="emailto:bakri.hmouda@gmail.com">Email</a
+						>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="text-xl text-gray-400">Links</h4>
+			</div>
+		</div>
+	</div>
+</footer>
