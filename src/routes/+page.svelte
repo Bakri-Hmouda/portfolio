@@ -50,13 +50,13 @@
 	</div>
 </section>
 
-<section class="m-auto mb-8">
+<section class="m-auto">
 	<div class="bg-gray-100 px-6 py-8 dark:bg-gray-700">
-		<div class="relative m-auto max-w-7xl px-4 md:px-8 lg:px-16">
+		<div class="relative m-auto max-w-7xl md:px-8 lg:px-16">
 			<h2 class="mb-2 text-xl capitalize">Skills</h2>
-			<div class=" grid gap-2 md:grid-cols-3">
+			<div class=" grid gap-2 lg:grid-cols-3">
 				{#each skills as skill}
-					<Card title={skill.title} level={skill.level} />
+					<Card title={skill.title} level={skill.level} icon={skill.icon} />
 				{/each}
 			</div>
 		</div>
