@@ -13,12 +13,15 @@ export const experiences: Experience[] = [
 ]
 interface Skills {
     title: string,
-    level: "beginner" | "intermediate" | "advancedIntermediate" | "advanced" | "expert"
+    level: "beginner" | "intermediate" | "advancedIntermediate" | "advanced" | "expert",
+    icon: string
 }
 export const skills: Skills[] = [
-    { title: 'javascript', level: 'advancedIntermediate' },
-    { title: 'HTML', level: 'advanced' },
-    { title: 'css', level: 'advanced' },
-    { title: 'PHP', level: 'beginner' },
+    { title: 'React', level: 'advancedIntermediate', icon: "cib:react" },
+    { title: 'NEXT', level: 'advancedIntermediate', icon: "cib:next-js" },
+    { title: 'SvelteKit', level: 'advancedIntermediate', icon: "cib:svelte" },
+    { title: 'Angular', level: 'beginner', icon: "cib:angular" },
+    { title: 'Laravel', level: 'intermediate', icon: "cib:laravel" },
+    { title: 'Adobe Creative Suite', level: 'advanced', icon: "cib:adobe-creative-cloud" },
 
 ]
