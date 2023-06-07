@@ -2,6 +2,8 @@
 	import Card from '$lib/card.svelte';
 	import { experiences, skills } from '$lib/experience';
 	import { fade } from 'svelte/transition';
+
+	let delay = 300;
 </script>
 
 <!-- template -->
@@ -9,9 +11,13 @@
 	<title>Bakri Hmouda</title>
 </svelte:head>
 
-<section class="m-auto mb-8 max-w-7xl px-4 md:px-8 lg:px-16">
+<section class="m-auto mb-8 max-w-7xl px-4 md:px-8 lg:px-16" out:fade={{ duration: 300 }}>
 	<div class="grid gap-8 md:grid-cols-2">
-		<div id="about" class="h-fit rounded bg-gray-100 px-6 py-8 shadow-sm dark:bg-gray-700">
+		<div
+			id="about"
+			class="h-fit rounded bg-gray-100 px-6 py-8 shadow-sm dark:bg-gray-700"
+			in:fade={{ delay: delay, duration: 300 }}
+		>
 			<h1 class="mb-2 text-xl capitalize">about</h1>
 			<p class="text-gray-500 dark:text-gray-400">
 				Passionate about creating captivating and user-friendly web experiences, I am a frontend web
@@ -24,11 +30,11 @@
 			</p>
 		</div>
 
-		<div id="experience">
+		<div id="experience" in:fade={{ delay: delay, duration: 300 }}>
 			<h1 class="mb-2 text-xl capitalize md:pt-8">Experience</h1>
 			<ul class="relative border-l border-gray-200 dark:border-gray-700">
 				{#each experiences as { date, title, company, body }, index}
-					<li class="mb-10 ml-4" in:fade={{ delay: (index + 1) * 150, duration: 300 }}>
+					<li class="mb-10 ml-4" in:fade={{ delay: (index + 1) * 150 + delay, duration: 300 }}>
 						<div
 							class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded border border-white bg-gray-200 dark:border-gray-800 dark:bg-gray-700"
 						/>
@@ -51,13 +57,15 @@
 	</div>
 </section>
 
-<section class="m-auto">
+<section class="m-auto" in:fade={{ delay: delay, duration: 300 }}>
 	<div class="bg-gray-100 px-6 py-8 dark:bg-gray-700">
 		<div class=" m-auto max-w-7xl md:px-8 lg:px-16">
 			<h2 class="mb-2 text-xl capitalize">Skills</h2>
 			<div class=" grid gap-2 lg:grid-cols-3">
-				{#each skills as skill}
-					<Card title={skill.title} level={skill.level} icon={skill.icon} />
+				{#each skills as skill, index}
+					<div in:fade={{ delay: (index + 1) * 150 + delay, duration: 300 }}>
+						<Card title={skill.title} level={skill.level} icon={skill.icon} />
+					</div>
 				{/each}
 			</div>
 		</div>
