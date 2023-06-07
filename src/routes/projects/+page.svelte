@@ -9,7 +9,7 @@
 			<div class="h-1 w-4 rounded bg-green-500 drop-shadow-glow" />
 			<h1 class="text-xl capitalize">Projects</h1>
 		</div>
-		<div class="mb-2 grid gap-2 md:grid-cols-3">
+		<div class="mb-2 grid gap-2 md:grid-cols-2">
 			{#each projects as project, index}
 				<Project {...project} {index} />
 			{/each}
