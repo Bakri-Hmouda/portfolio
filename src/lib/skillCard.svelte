@@ -11,23 +11,23 @@
 	const levels = {
 		beginner: {
 			title: 'Beginner',
-			level: 1
+			level: '20%'
 		},
 		intermediate: {
 			title: 'Intermediate',
-			level: 2
+			level: '40%'
 		},
 		advancedIntermediate: {
 			title: 'Advanced Intermediate',
-			level: 3
+			level: '60%'
 		},
 		advanced: {
 			title: 'Advanced',
-			level: 4
+			level: '80%'
 		},
 		expert: {
 			title: 'Expert',
-			level: 5
+			level: '100%'
 		}
 	};
 </script>
@@ -41,13 +41,9 @@
 	<span>Level: </span><span>{levels[level].title}</span>
 	<div
 		id="progress-bar"
-		class="mt-1 grid h-1 w-full grid-cols-5 gap-0.5 overflow-hidden rounded bg-gray-400 shadow-inner dark:bg-gray-200"
+		class="mt-1 h-1 w-full gap-0.5 overflow-hidden rounded bg-gray-400 shadow-inner dark:bg-gray-200"
 	>
 		<!-- render the width dynamically using the inline style tag -->
-		<div class:bg-yellow-600={levels[level].level >= 1} />
-		<div class:bg-green-600={levels[level].level >= 2} />
-		<div class:bg-teal-600={levels[level].level >= 3} />
-		<div class:bg-sky-600={levels[level].level >= 4} />
-		<div class:bg-indigo-600={levels[level].level >= 5} />
+		<div style="width:{levels[level].level};" class="h-full bg-green-600" />
 	</div>
 </div>
