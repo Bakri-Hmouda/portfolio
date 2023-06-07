@@ -1,5 +1,5 @@
 <script>
-	import Card from '$lib/card.svelte';
+	import Card from '$lib/skillCard.svelte';
 	import { experiences, skills } from '$lib/experience';
 	import { fade } from 'svelte/transition';
 
