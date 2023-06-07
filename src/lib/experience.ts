@@ -25,3 +25,46 @@ export const skills: Skills[] = [
     { title: 'Adobe Creative Suite', level: 'advanced', icon: "cib:adobe-creative-cloud" },
 
 ]
+
+export const footerData = [
+    {
+        title: "Contact",
+        links: [
+            {
+                name: "Phone",
+                href: 'tel:0096171450221',
+                icon: 'ic:baseline-phone',
+            },
+            {
+                name: "Email",
+                href: 'mailto:bakri.hmouda@gmail.com',
+                icon: 'ic:baseline-email',
+            },
+        ]
+    },
+    {
+        title: "Links",
+        links: [
+            {
+                name: "Github",
+                href: 'https://github.com/Bakri-Hmouda',
+                icon: 'cib:github',
+            },
+            {
+                name: "Linkdin",
+                href: 'https://www.linkedin.com/in/bakrihmouda/',
+                icon: 'cib:linkedin',
+            },
+            {
+                name: "Behance",
+                href: "https://www.behance.net/bakrihmouda",
+                icon: 'cib:behance',
+            },
+            {
+                name: "Download cv",
+                href: '/favicon',
+                icon: 'ic:round-download',
+            },
+        ]
+    },
+]
