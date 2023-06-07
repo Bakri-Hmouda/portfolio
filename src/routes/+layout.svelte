@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import { each } from 'svelte/internal';
 	import '../app.css';
 	import Icon from '@iconify/svelte';
@@ -8,14 +9,18 @@
 		closed = !closed;
 	}
 
+	// close nav menu on navigation
+	afterNavigate(() => (closed = true));
+
 	let menuItems = [
+		{ title: 'Home', href: '/' },
 		{ title: 'Projects', href: '/projects' },
 		{ title: 'Download CV', href: '/favicon.png' }
 	];
 </script>
 
 <header
-	class="m-auto mb-8 flex max-w-7xl flex-wrap items-center justify-between px-4 pt-12 md:mb-12 md:px-8 lg:px-16"
+	class="m-auto mb-8 flex w-full max-w-7xl flex-wrap items-center justify-between px-4 pt-12 md:mb-12 md:px-8 lg:px-16"
 >
 	<div>
 		<h1 class="text-2xl">Bakri Hmouda</h1>
@@ -32,13 +37,13 @@
 		<!-- nav -->
 		<nav
 			class:hidden={closed}
-			class="absolute right-0 top-6 z-50 h-fit rounded bg-gray-600 p-1 drop-shadow-lg"
+			class="absolute right-0 top-6 z-50 h-fit rounded bg-gray-200 p-1 drop-shadow-lg dark:bg-gray-600"
 		>
 			<ul class="">
 				{#each menuItems as menuItem}
 					<li>
 						<a
-							class="block whitespace-nowrap rounded px-6 py-4 hover:bg-slate-500"
+							class="block whitespace-nowrap rounded px-6 py-4 hover:bg-gray-300 dark:hover:bg-gray-500"
 							href={menuItem.href}>{menuItem.title}</a
 						>
 					</li>{/each}
@@ -47,12 +52,12 @@
 	</div>
 </header>
 
-<main>
+<main class="flex-1">
 	<slot />
 </main>
 
 <!-- footer -->
-<footer class=" bg-gray-950">
+<footer class="mt-auto bg-gray-950">
 	<div class="m-auto max-w-7xl px-4 py-12 md:px-8 lg:px-16">
 		<div class="grid grid-cols-3">
 			<div>
