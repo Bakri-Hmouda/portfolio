@@ -18,9 +18,9 @@
 
 	// nav menu items
 	let menuItems = [
-		{ title: 'Home', href: '/' },
-		{ title: 'Projects', href: '/projects' },
-		{ title: 'Download CV', href: '/favicon.png' }
+		{ title: 'Home', href: '/', download: null },
+		{ title: 'Projects', href: '/projects', download: null },
+		{ title: 'Download CV', href: '/Bakri-Hmouda.pdf', download: 'Bakri-Hmouda-Resume' }
 	];
 
 	// current year
@@ -53,6 +53,7 @@
 					{#each menuItems as menuItem}
 						<li>
 							<a
+								download={menuItem.download}
 								class="block whitespace-nowrap rounded px-6 py-4 transition-colors hover:bg-gray-300 dark:hover:bg-gray-500"
 								href={menuItem.href}>{menuItem.title}</a
 							>
