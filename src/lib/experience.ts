@@ -42,7 +42,7 @@ export const footerData = [
         links: [
             {
                 name: "Phone",
-                href: 'tel:0096171450221',
+                href: 'tel:+14374732130',
                 icon: 'ic:baseline-phone',
                 download: null
             },
