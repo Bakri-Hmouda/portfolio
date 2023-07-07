@@ -5,9 +5,6 @@
 	import '../app.css';
 	import Icon from '@iconify/svelte';
 
-	// load data
-	export let data;
-
 	let open = false;
 	function openMenu() {
 		open = !open;
@@ -82,7 +79,7 @@
 								class="mb-1 flex items-center gap-2 text-gray-200 transition-colors hover:text-emerald-600"
 							>
 								<Icon icon={link.icon} />
-								<a class="w-full" href={link.href} target="_blank">
+								<a class="w-full" href={link.href} target="_blank" download={link.download}>
 									{link.name}
 								</a>
 							</li>

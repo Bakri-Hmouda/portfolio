@@ -17,14 +17,24 @@ interface Skills {
     icon: string
 }
 export const skills: Skills[] = [
-    { title: 'React', level: 'advancedIntermediate', icon: "cib:react" },
+    { title: 'React', level: 'advanced', icon: "cib:react" },
     { title: 'NEXT', level: 'advancedIntermediate', icon: "cib:next-js" },
-    { title: 'SvelteKit', level: 'advancedIntermediate', icon: "cib:svelte" },
+    { title: 'SvelteKit', level: 'advanced', icon: "cib:svelte" },
     { title: 'Angular', level: 'beginner', icon: "cib:angular" },
     { title: 'Laravel', level: 'intermediate', icon: "cib:laravel" },
-    { title: 'Adobe Creative Suite', level: 'advanced', icon: "cib:adobe-creative-cloud" },
+    { title: 'Wordpress', level: 'advanced', icon: "cib:wordpress" },
 
 ]
+
+interface FooterData {
+    title: string,
+    links: {
+        name: string,
+        href: string,
+        icon: string,
+        download: null | string,
+    }[]
+}
 
 export const footerData = [
     {
@@ -34,11 +44,13 @@ export const footerData = [
                 name: "Phone",
                 href: 'tel:0096171450221',
                 icon: 'ic:baseline-phone',
+                download: null
             },
             {
                 name: "Email",
                 href: 'mailto:bakri.hmouda@gmail.com',
                 icon: 'ic:baseline-email',
+                download: null
             },
         ]
     },
@@ -49,22 +61,26 @@ export const footerData = [
                 name: "Github",
                 href: 'https://github.com/Bakri-Hmouda',
                 icon: 'cib:github',
+                download: null,
             },
             {
                 name: "Linkdin",
                 href: 'https://www.linkedin.com/in/bakrihmouda/',
                 icon: 'cib:linkedin',
+                download: null,
             },
             {
                 name: "Behance",
                 href: "https://www.behance.net/bakrihmouda",
                 icon: 'cib:behance',
+                download: null,
             },
             {
                 name: "Download cv",
-                href: '/favicon',
+                href: '/Bakri-Hmouda.pdf',
                 icon: 'ic:round-download',
+                download: "Bakri-Hmouda-Resume"
             },
         ]
     },
-]
+] satisfies FooterData[]
